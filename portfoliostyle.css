@@ -4,8 +4,8 @@
 
     display: grid;
 
-    grid-template-columns:repeat(12, 6vw);
-    grid-template-rows: repeat(19, 6vw);
+    grid-template-columns:repeat(auto-fit, 7vw);
+    grid-template-rows: repeat(auto-fit, 7vw);
 
     
     grid-gap: .2vh;
@@ -13,7 +13,7 @@
     position:relative;
     margin: auto;
     height: auto;
-    width: 72%;
+    width: 84%;
 
     right: 0%;
     left: 0%;
@@ -100,15 +100,14 @@
 .modal
 {
     position: absolute;
-    left:50%; right:50%; top:20%;
+    left:50%; right:50%; top: 15%;
     transform: translate(-50%,-50%) scale(0);
 
     z-index: 10;
     background-color: transparent;
-    width: 900px;
-    max-width: 80%;
-    height: 2000px;    
-    margin: 2%;
+    width:900px;
+    max-width: 90%;
+    max-height: 85%;    
 
 }
 
@@ -120,10 +119,8 @@
 
 .modalimages
 {    
-    margin: 5%;
-    justify-content: space-between;
-    align-items: center;
-    
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 .close
@@ -133,7 +130,7 @@
     outline: none;
     background: none;
     font-size: 32px;
-    top:0%; right:1%;
+    top:2.25%; right:0%;
     position:fixed;
 }
 
