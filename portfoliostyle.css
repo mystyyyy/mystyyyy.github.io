@@ -13,7 +13,7 @@
     position:relative;
     margin: auto;
     height: auto;
-    width: 84%;
+    width: 80%;
 
     right: 0%;
     left: 0%;
@@ -114,7 +114,7 @@
 {
     .modal
     {
-        top:5%;
+        top:0%;
 
     }
 }
@@ -123,7 +123,7 @@
 {
     .modal
     {
-        top:-25%;
+        top:10%;
 
     }
 }
@@ -243,4 +243,86 @@
     
     grid-row: 1/5;
     grid-column: 1/5;
+}
+
+@media screen and (max-width:600px)
+{
+    .portfoliocontainer
+    {
+        grid-template-columns:76vw;
+        grid-template-rows: repeat(auto-fit, 19vw);
+    }
+    .one
+    {
+        grid-row: 23/24;
+        grid-column: 1/1;
+    }
+
+    .two
+    {
+        grid-row: 4/7;
+        grid-column: 1/1;
+    }
+
+    .three
+    {
+        grid-row: 14/17;
+        grid-column: 1/1;
+    }
+
+    .four
+    {
+        grid-row: 8/11;
+        grid-column: 1/1;
+    }
+
+
+    .five
+    {
+        grid-row: 13/14;
+        grid-column: 1/1;
+    }
+
+    .six
+    {
+        grid-row: 17/18;
+        grid-column: 1/1;
+    }
+
+    .seven
+    {
+        grid-row: 18/21;
+        grid-column: 1/1;
+    }
+
+    .eight
+    {
+        grid-row: 21/23;
+        grid-column: 1/1;
+    }
+
+    .nine
+    {
+        grid-row: 11/13;
+        grid-column: 1/1;
+    }
+
+    .ten 
+    {
+        grid-row: 7/8;
+        grid-column: 1/1;
+    }
+
+    .eleven
+    {
+        grid-row: 24/27;
+        grid-column: 1/1;
+    }
+
+    .twelve
+    {
+        
+        grid-row: 1/4;
+        grid-column: 1/1;
+    }
 }
