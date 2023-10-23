@@ -138,6 +138,16 @@
 }
 
 
+@media screen and (max-width:480px)
+{
+    .modal
+    {
+        top:15%;
+    }
+} 
+
+
+
 .modal.active
 {
     transform: translate(-50%,-50%) scale(1);
