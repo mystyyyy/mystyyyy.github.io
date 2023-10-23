@@ -117,13 +117,22 @@
         top:0%;
 
     }
+
+    .imagetitle
+    {
+        font-size: 20px;
+        letter-spacing: 3px;
+    }
+    
 }
 
 @media screen and (max-width:600px) 
 {
     .modal
     {
-        top:10%;
+        top:11%;
+        height: 2000px;
+        max-width: 110%;
 
     }
 }
