@@ -85,19 +85,24 @@ async function createTitle(file){
 
 async function createModalImage(file, grid){
     var modalImg = [];
+
     for(var i =1; i<=grid;i++){
         var modalImgGroup = [];
         var j = 1;
-        while(true){
+        let imageFound = true;
+
+        if(imageFound){
             var imgSrc = file + '/' + i +'/' +j +'.png';
             const doesImgExist = await imgExist(imgSrc);
             if(doesImgExist){
                 modalImgGroup.push("<img class='modalArtImg' src='" + imgSrc + "' alt='' loading='lazy' />");
                 j++;
             } else {
-                break;
+                imageFound = false;
             }
         }
+    
+        
         //remove commas 
         var modalImgGroupJoin = modalImgGroup.join('\n');
         modalImg.push(modalImgGroupJoin);
