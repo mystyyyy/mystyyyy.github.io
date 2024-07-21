@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Mysty</title>
+    <link rel="icon" type="image/x-icon" href="Website V2/icon.ico"/>
+
+    <link href="reset.css" rel="stylesheet"/>
+    <link href="designPage.css" rel="stylesheet"/>
+    <script src="gridCreation.js" defer></script>
+    <script src="scrollandBackground.js" defer></script>
+</head>
+
+<body>
+    <a href="javascript:void(0);" onclick="openNavbar();"><img class="menuIcon" src="menu.png" alt=""/></a>
+    <div id="menu">
+        <ul id="navHeader">
+            <li><a class="navLink active" id="navTitle" href="#home">Home</a></li>
+            <li><a class="navLink" href="#portfolio">Portfolio</a></li>
+            <li><a class="navLink" href="#sketches">Misc. Art</a></li>
+            <li><a class="navLink" href="#about">About</a></li>
+            <li><a class="navLink" href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="section" id="home">
+        <h1>Mysty</h1>
+        <h2>Welcome Friend</h2>
+        <img id="arrow" src="arrow.png" alt="arrow pointing down">
+        <video autoplay muted loop id="backgroundAnimated">
+            <source src="backgroundAnimated.mp4" type="video/mp4">
+            //add regular img if browser cant load mp4 
+        </video>
+    </div>
+
+    <section class="section"  id="portfolio">
+        <h3>Portfolio</h3>
+        <div id="grid"></div>
+        <div id="pModal"></div>
+    </section>
+
+    <section  class="section" id="sketches">
+        <h3>Misc. Art</h3>
+        <div id="grid2"></div>
+        <div id="sModal"></div>
+        </div>
+    </section>
+
+    <section class="section"  id="about">
+        <h3>About</h3>
+        <div id="aboutContainer">
+            <div id="imgFloat"><img id="aboutIcon" src="placeholdericon.png" alt=""/></div>
+            
+            <p id="aboutText">Hello my name is Brandon H Nguyen, and I go by Mysty online! I’m a concept artist and illustrationist.<br/><br/>
+
+                I doodled all the time ever since I was a little kid, and growing up on the internet, I was also exposed to various flash games, anime, and World of Warcraft. 
+                The characters and worlds I was put in enamored me to no end. I love imagining my own scenes with fantastical characters inspired by others, and more importantly, put it down on the paper! <br/><br/>
+                    
+                The internet also exposed me to many artists, one importantly being Ross Tran, or Ross Draws. He made me realize my love for art was more than just a hobby. 
+                With my realization of passion, I engrossed myself with all the resources related to concept art and illustration I could find so I could make better art and can fully realize my ideas. <br/><br/>
+                    
+                Art is like breathing to me. It’s the natural thing to do, and I can only stop when I die!
+            </p>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <h3>Contact Me!</h3>
+        <div id="contactContainer">
+            <p id="bigP1">Business inquiries? Need something? Contact me!</p>
+            <p style="font-size: 1.2em; margin-left: 2em;">mystycontact5903@gmail.com</p>
+            <div class="row">
+                <div class="column">
+                    <form action="https://formsubmit.co/mystycontact5903@gmail.com" method="POST">
+                        <label>Name</label>
+                        <input type="name" name="name" placeholder="Name" required>
+
+                        <label>Email Address</label>
+                        <input type="email" name="email" placeholder="Email" required>
+
+                        <label>Body</label>
+                        <textarea type="text" name="message" placeholder="Type here" required></textarea>
+
+                        <button type="submit">Submit</button>
+                        <input type="hidden" name="_next" value="http://mysty.art/contact.html">
+                        <input type="hidden" name="_autoresponse" value="Thanks for the email! I will get back to you as soon as possible.">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+<footer>
+    <div id="social">
+        <p id="footerText">Mysty // Brandon H Nguyen</p>
+        <a href="https://www.artstation.com/mysty"><img class="socialIcon" src="artstation.png" alt="Mysty's Artstation Account"/></a>
+        <a href="https://cara.app/mysty"><img class="socialIcon"  src="cara.png" alt="Mysty's Cara Account"/></a>
+        <a href="https://www.instagram.com/mystyyyy_/"><img class="socialIcon"  src="instagram.png" alt="Mysty's Instagram Account"/></a>
+        <a href="https://x.com/mystyyyy_"><img class="socialIcon"  src="twitter.png" alt="Mysty's Twitter Account"/></a>
+    </div>
+</footer>
+</html>

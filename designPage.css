@@ -1,0 +1,508 @@
+@charset "utf-8";
+@font-face {
+    font-family: Inika;
+    src: url("Inika-Regular.ttf") format("ttf");
+    src: url("Inika-Regular.woff") format("woff");
+}
+
+html, body{scroll-behavior: smooth !important; scrollbar-width: thin;}
+
+html{
+    background: rgb(88,47,41);
+    scroll-padding-top: 3em;
+    
+}
+body{
+    font-family: Inika;
+    overflow-x: hidden;
+    margin: 0 auto;
+}
+
+/* nav bar */
+img.menuIcon{display:none;}
+#navHeader{
+    width:100%;
+    height:3.5em;
+    position:fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(232,219,195);
+    text-align: center;
+    z-index: 7;   
+}
+
+li{
+    display: inline;
+}
+
+a.navLink{
+    height: 100%;
+    color:rgb(88,47,41);
+    font-size: 1.25em;
+    line-height: 1.5em;
+    padding: 0em 4%;
+    text-align: center;
+    text-decoration: none;
+}
+
+a.navLink.active{
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    color:rgb(243, 63, 63);
+}
+
+a#navTitle
+{
+    font-size: 2em;
+    padding:0em 6%;
+
+}
+
+a#navTitle:hover{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+}
+
+/* Home screen/background*/
+div#home{
+    width:100%;
+    height:100%;
+    max-width: 1920px;
+    max-height: 1080px;
+    margin: 0 auto;
+    top:-5%;
+    position:relative;
+    background-position: center;
+    background-size:cover;
+    z-index: 0;
+}
+
+#backgroundAnimated{
+    position: absolute;
+    z-index: -1;
+    width:100%;
+    height:100%;
+    max-width: 1920px;
+    max-height: 1080px;
+    margin: 0 auto;
+    top:-3%;
+    left: 0%;
+    object-fit: cover;
+    background-position: center;
+}
+
+section{
+    width:90%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+/* Home title + headers*/
+h1,h2{
+    color: rgb(232,219,195);
+    position: relative;
+    top:60%;
+}
+
+#arrow{
+    width: 5em;
+    height: auto;
+    position: relative;
+    top:57%;
+    left: 50%;
+    animation: arrow 2s linear infinite;
+}
+
+h1{font-size: 7em; left: 5%; line-height: 25%;}
+h2{font-size: 4.5em; left:7%;}
+
+h3{
+    width:auto;
+    max-width: 480px;
+    color: rgb(232,219,195); 
+    font-size: 3em;
+    position:relative;
+    margin: 0 5%;
+}
+
+
+/* portfolio + sketch grid */
+div#grid, #grid2{
+    position: relative;
+    width: 76%;
+    max-width: 90em;
+    max-height: 120em;
+    margin: 1em auto 6em auto;
+
+    display: grid;
+    grid-template-columns: repeat(3,33.34%);
+    grid-template-rows: repeat(4, 25%);
+}
+
+div.imageContainer{
+    border: solid 3px rgb(232,219,195);
+    position:relative;
+    width:fit-content;
+    overflow: hidden;
+    max-width: 30em;
+    width:99%;
+    height:99%;
+}
+
+img.thumbnail{
+    display: block;
+    width:100%;
+    height:100%;
+
+}
+
+.imgOverlay, .imgButton{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    transition:  ease-in-out .3s;
+}
+
+.imgOverlay{z-index: 1;}
+.imgButton{
+    z-index: 6;
+    display: block;
+    font-size: 3vw;
+    color: rgb(232, 219, 195);
+    text-decoration: none;
+    opacity: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-right: 2px;
+}
+
+
+div.imageContainer:hover .imgOverlay {
+    background-image: linear-gradient(gray,black);
+    mix-blend-mode: multiply;
+    opacity: .6;
+}
+
+.imgOverlay{pointer-events: none;}
+
+/*modalstuff*/
+.modal{
+    position: fixed;
+    top: 52%;
+    left: 50%;
+    border: 2px solid rgb(232, 219, 195);
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 12;
+    background-color: rgb(88,47,41);
+    width: 900px;
+    max-width:80%;
+    height: 1000px;
+    max-height: 90%;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    transition: .5s, ease;
+}
+
+.modal.active{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modalImg{
+    width:100%;
+    display: flex;
+    position: sticky;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(232, 219, 195);
+    z-index: 7;
+}
+
+.modalImg p{
+    color: rgb(88,47,41);
+    margin-left: 3em;
+    font-size: 2em;
+    line-height: 0.5;
+}
+
+.modalImg .close{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.5em;
+    font-weight: bold;
+    z-index: 4;
+    color:rgb(88,47,41);
+    margin-right: 1em;
+}
+
+.portfolioImg{
+    padding: 10px 15px;
+}
+
+#overlay{
+    position:fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0, .5);
+    pointer-events: none;
+    z-index: 11;
+}
+
+#overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+/*make arrow and button overlap correctly*/
+#left{rotate: 90deg; left: 7%; pointer-events: none;}
+#arrowLeft{left: 7%;}
+#right{rotate: 270deg; right: 7%; pointer-events: none;}
+#arrowRight{right:7%;}
+
+.modalArrow, #left, #right{
+    position: fixed;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    top: 50%;
+    width: 6em;
+    height: 6em; 
+}
+
+.modalArrow{
+    opacity: 0;
+    z-index: 15;
+}
+
+.modalArrow.active{
+    opacity: 1;
+    pointer-events:all;
+}
+
+.modalArtImg{
+    width: 800px; 
+    max-width: 75%; 
+    height:auto;
+    display: block;
+    margin: 1.2em auto;
+}
+/*make text go from the left + add little square decoration*/
+div.imageContainer #decal1, div.imageContainer #decal2 {
+    position: absolute;
+    top: 57.5%;
+    left: -127.5%;
+    background-color: rgb(232, 219, 195);
+    opacity: 0;
+    transition: ease-in-out .3s;
+    pointer-events: none;
+    z-index: 2;
+    margin-top: .05em;
+}
+
+div.imageContainer:hover #decal1{
+    opacity: 1;
+    left: 27.5%;
+}
+
+div.imageContainer:hover #decal2{
+    opacity: 1;
+    left: 37.5%;
+}
+
+div#decal1{width: 5%;height: 5%;}
+div#decal2 {width: 30%;height: 1%;}
+
+div.imageContainer:hover .imgButton{
+    opacity: 1;
+    top:0%;
+    left:0%;
+}
+.gridTitle{
+    font-family: Inika;
+    font-size: 1.5vw;
+    font-weight: normal;
+    line-height: 1.25em;
+    z-index: 3;
+    left: 0%
+}
+/* about + contact */
+
+div#aboutContainer, div#contactContainer{
+    position: relative;
+    width:84%;
+    margin: 1em auto 6em auto;
+    
+}
+
+p{
+    color: rgb(232,219,195); 
+    font-size: 1.4em;
+    line-height: 2;
+}
+
+div#imgFloat{
+    float: left;
+    width:auto;
+    height:auto;
+    margin: 1em;
+
+}
+img#aboutIcon{
+    width:100%;
+    max-width: 25em;
+    height: 100%;
+    max-height: 25em;
+    float:left;
+}
+
+/* form design */
+input[type=name], input[type=email], input[type=text], select, textarea
+{
+    width: 100%;
+    border: 1px solid rgb(232,219,195);
+    padding: 8px 0;
+    margin: 8px 0;
+    resize:vertical;
+    color:black;
+}
+
+textarea{
+    font-family: arial;
+    word-wrap: break-word;
+    word-break: break-all;
+    height: 12em;
+}
+
+button[type=submit]
+{
+    width: 15%;
+    height: 3em;
+    background-color: rgb(243, 63, 63);
+    color: rgb(14, 26, 44);
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button[type=submit]:hover
+{
+    background-color: rgb(232, 219, 195);
+}
+
+.column
+{
+    float:left;
+    width: 80%;
+    margin:auto;
+    padding-left: 6em;
+}
+
+#bigP1{font-size: 2em;}
+.row{margin-top: 1.5em;}
+
+.row:after
+{
+    content:"";
+    display: table;
+    clear: both;
+}
+
+label{
+    color: rgb(232,219,195); 
+    font-size: 1.25em;
+}
+
+/*Footer stuff*/
+
+p#footerText{
+    font-size: 1em;
+    display:inline-block;
+}
+
+div#social{
+    margin: 0% 25% 2% 25%;
+    text-align: center;
+}
+
+img.socialIcon{
+    max-width: 1.5em;
+    max-height: 1.5em;
+    margin-left: 1em;;
+}
+
+@media only screen and (max-width:640px){
+    div.imageContainer{border: 1px solid rgb(232, 219, 195);}
+    div#home{top:-7.5%; height: 105%;}
+    div#grid,div#grid2{width:95%;}
+    div#aboutContainer, div#contactContainer, div#grid, div#grid2{margin-bottom: 3em;}
+    h1,h2{top:70%;}
+    #arrow{top: 85%; left: 41%;}
+    h1{font-size: 5em;}
+    h2{font-size: 2.5em;}
+    h3{font-size: 2em;}
+    p#aboutText{font-size: 1em;}
+    p#bigP1{font-size: 1.25em;}
+    div.column{padding-left: 0; width:100%;}
+    button[type=submit]{width:35%}
+    img#aboutIcon{max-width: 10em; max-height: 10em; padding:0; margin:2em;}
+    h1.gridTitle{font-size: 3vw; line-height: 1em;}
+    .modalImg p{font-size: 1.5em; line-height: .8; margin-left: 1em; font-style: bold;}
+    /*make menu bar thing that you can open*/
+    img.menuIcon{
+        display: block;
+        position:fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        max-width: 2.5em;
+        height: 100%;
+        max-height: 2.5em;
+        z-index: 10;
+    }
+    div#menu{
+        overflow: hidden;
+        position: relative;
+    }
+    ul#navHeader{
+        display: none;
+    }
+    li a{
+        display: block;
+        background-color: rgb(232, 219, 195);
+        text-align: center;
+        height: 3em;
+        line-height: 3em;
+    }
+    div#grid, #grid2{
+        grid-template-columns: repeat(2,50%);
+        grid-template-rows: repeat(auto, 25%);
+    }
+
+}
+
+@media only screen and (max-width:960px){
+    div.imageContainer{border: 2px solid rgb(232, 219, 195);}
+    img#aboutIcon{max-width: 15em; max-height: 15em;}
+    li{margin: auto;}
+    a.navLink{padding: 0 1.5%;}
+    a#navTitle{padding: 0 3%;}
+    .gridTitle{font-size: 2vw; line-height: 1em;}
+    h1,h2{top:55%;}
+    #arrow{top: 55%; left: 41%;}
+}
+
+@keyframes arrow{
+    50%{
+        opacity: 0;
+    }
+}
