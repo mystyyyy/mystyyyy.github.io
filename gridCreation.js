@@ -85,7 +85,6 @@ async function createTitle(file){
 
 async function createModalImage(file, grid){
     var modalImg = [];
-
     for(var i =1; i<=grid;i++){
         var modalImgGroup = [];
         var j = 1;
@@ -96,12 +95,9 @@ async function createModalImage(file, grid){
                 modalImgGroup.push("<img class='modalArtImg' src='" + imgSrc + "' alt='' loading='lazy' />");
                 j++;
             } else {
-                // Exit loop if image doesn't exist
                 break;
             }
         }
-    
-        
         //remove commas 
         var modalImgGroupJoin = modalImgGroup.join('\n');
         modalImg.push(modalImgGroupJoin);
