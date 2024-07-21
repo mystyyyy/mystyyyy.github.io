@@ -1,0 +1,347 @@
+.portfoliocontainer
+{
+    z-index: 1;
+
+    display: grid;
+
+    grid-template-columns:repeat(auto-fit, 7vw);
+    grid-template-rows: repeat(auto-fit, 7vw);
+
+    
+    grid-gap: .2vh;
+
+    position:relative;
+    margin: auto;
+    height: auto;
+    width: 80%;
+
+    right: 0%;
+    left: 0%;
+
+}
+
+/*hover button*/
+.imagecontainer
+{
+    position: relative;
+    width:100%;
+    height: 100%;
+}
+
+.text
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:aliceblue;
+    font-size:16px;
+    letter-spacing: 3px;
+    padding: 16px 32px;
+}
+
+.title
+{
+    transition: .3s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.gallery
+{
+    transition: .3s ease;
+    opacity: 1;
+    
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    backface-visibility: hidden;
+    pointer-events: none;
+
+
+}
+
+.imagecontainer:hover .gallery
+{
+    opacity: .3;
+}
+
+.imagecontainer:hover .title
+{
+    opacity: 1;
+}
+
+/*gallery popup*/
+.imagetitle
+{
+    font-size: 24px;
+    letter-spacing: 5px;
+}
+.gallerybutton
+{
+    cursor:pointer;
+    border: none;
+    outline: none;
+    background: none;
+}
+.gallerypicture
+{
+    opacity:1;
+    display:block;
+    width: 900px;
+    max-width: 100%;
+    padding-top: 20px;
+    margin:auto;
+}
+
+.modal
+{
+    position: absolute;
+    left:50%; right:50%; top: 16%;
+    transform: translate(-50%,-50%) scale(0);
+
+    z-index: 10;
+    background-color: transparent;
+    width:900px;
+    max-width: 90%;
+    max-height: 85%;    
+}
+
+@media screen and (max-width:960px) 
+{
+    .modal
+    {
+        top:3%;
+
+    }
+
+    .imagetitle
+    {
+        font-size: 20px;
+        letter-spacing: 3px;
+    }
+    
+}
+
+@media screen and (max-width:600px) 
+{
+    .modal
+    {
+        top:11%;
+        height: 2000px;
+        max-width: 110%;
+
+    }
+}
+
+
+@media screen and (max-width:480px)
+{
+    .modal
+    {
+        top:15%;
+    }
+} 
+
+
+
+.modal.active
+{
+    transform: translate(-50%,-50%) scale(1);
+    
+}
+
+.modalimages
+{    
+    margin-bottom: 5%;
+}
+
+.close
+{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 32px;
+    top:0%; right:0%;
+    position:fixed;
+}
+
+#overlay
+{
+    z-index: 2;
+    position: fixed;
+    opacity:0;
+    top: 0; right:0; left:0; bottom:0;
+    background-color: rgba(0, 0, 0, 0.75);
+    transition: .2s ease-in-out;
+    pointer-events: none;
+}
+
+#overlay.active
+{
+    opacity:1;
+    pointer-events: all;
+
+}
+
+/*gallery position*/
+
+.one
+{
+    grid-row: 16/19;
+    grid-column: 4/9;
+}
+
+.two
+{
+    grid-row: 1/5;
+    grid-column: 5/9;
+}
+
+.three
+{
+    grid-row: 9/15;
+    grid-column: 9/12;
+}
+
+ .four
+{
+    grid-row: 13/16;
+    grid-column: 6/9;
+}
+
+
+.five
+{
+    grid-row: 9/13;
+    grid-column: 1/9;
+}
+
+.six
+{
+    grid-row: 13/16;
+    grid-column: 1/6;
+}
+
+.seven
+{
+    grid-row: 16/19;
+    grid-column: 1/4;
+}
+
+.eight
+{
+    grid-row: 15/19;
+    grid-column: 9/12;
+}
+
+.nine
+{
+    grid-row: 1/6;
+    grid-column: 9/12;
+}
+
+.ten 
+{
+    grid-row: 5/9;
+    grid-column: 1/9;
+}
+
+.eleven
+{
+    grid-row: 6/9;
+    grid-column: 9/12;
+}
+
+.twelve
+{
+    
+    grid-row: 1/5;
+    grid-column: 1/5;
+}
+
+@media screen and (max-width:600px)
+{
+    .portfoliocontainer
+    {
+        grid-template-columns:76vw;
+        grid-template-rows: repeat(auto-fit, 19vw);
+    }
+    .one
+    {
+        grid-row: 23/24;
+        grid-column: 1/1;
+    }
+
+    .two
+    {
+        grid-row: 4/7;
+        grid-column: 1/1;
+    }
+
+    .three
+    {
+        grid-row: 14/17;
+        grid-column: 1/1;
+    }
+
+    .four
+    {
+        grid-row: 18/21;
+        grid-column: 1/1;
+    }
+
+
+    .five
+    {
+        grid-row: 13/14;
+        grid-column: 1/1;
+    }
+
+    .six
+    {
+        grid-row: 17/18;
+        grid-column: 1/1;
+    }
+
+    .seven
+    {
+        grid-row: 24/27;
+        grid-column: 1/1;
+    }
+
+    .eight
+    {
+        grid-row: 21/23;
+        grid-column: 1/1;
+    }
+
+    .nine
+    {
+        grid-row: 11/13;
+        grid-column: 1/1;
+    }
+
+    .ten 
+    {
+        grid-row: 7/8;
+        grid-column: 1/1;
+    }
+
+    .eleven
+    {
+        grid-row: 8/11;
+        grid-column: 1/1;
+    }
+
+    .twelve
+    {
+        
+        grid-row: 1/4;
+        grid-column: 1/1;
+    }
+}
