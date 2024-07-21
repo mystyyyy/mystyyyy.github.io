@@ -88,15 +88,22 @@ async function createModalImage(file, grid){
 
     for(var i =1; i<=grid;i++){
         var modalImgGroup = [];
-        for(var j=1; j<=8; j++){
+        var j = 1;
+        while(true){
             var imgSrc = file + '/' + i +'/' +j +'.png';
             const doesImgExist = await imgExist(imgSrc);
             if(doesImgExist){
                 modalImgGroup.push("<img class='modalArtImg' src='" + imgSrc + "' alt='' loading='lazy' />");
+                j++;
+            } else {
+                // Exit loop if image doesn't exist
+                break;
             }
         }
+    
+        
         //remove commas 
-        var modalImgGroupJoin = modalImgGroup.join(',').replace(/,/g, '\n').split();
+        var modalImgGroupJoin = modalImgGroup.join('\n');
         modalImg.push(modalImgGroupJoin);
     } 
     return modalImg;
