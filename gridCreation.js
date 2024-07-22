@@ -89,16 +89,15 @@ async function createModalImage(file, grid){
     for(var i =1; i<=grid;i++){
         var modalImgGroup = [];
         var j = 1;
-        let imageFound = true;
-
-        if(imageFound){
+        while(true){
             var imgSrc = file + '/' + i +'/' +j +'.png';
             const doesImgExist = await imgExist(imgSrc);
             if(doesImgExist){
                 modalImgGroup.push("<img class='modalArtImg' src='" + imgSrc + "' alt='' loading='lazy' />");
                 j++;
             } else {
-                imageFound = false;
+                // Exit loop if image doesn't exist
+                break;
             }
         }
     
