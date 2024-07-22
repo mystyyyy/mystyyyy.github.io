@@ -99,6 +99,7 @@ async function createModalImage(file, grid){
                 break;
             }
         }
+    
         
         //remove commas 
         var modalImgGroupJoin = modalImgGroup.join('\n');
