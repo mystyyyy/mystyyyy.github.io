@@ -96,11 +96,9 @@ async function createModalImage(file, grid){
                 modalImgGroup.push("<img class='modalArtImg' src='" + imgSrc + "' alt='' loading='lazy' />");
                 j++;
             } else {
-                // Exit loop if image doesn't exist
                 break;
             }
         }
-    
         
         //remove commas 
         var modalImgGroupJoin = modalImgGroup.join('\n');
